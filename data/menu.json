@@ -1,0 +1,211 @@
+{
+  "data": [
+    {
+      "headTitle1": "Menu",
+      "headTitle2": "Dashboards,Widgets & Layout.",
+      "type": "headtitle"
+    },
+    {
+      "title": "Dashboard",
+      "icon": "stroke-widget",
+      "iconf":"fill-widget",
+      "type": "sub",
+      "badgeType": "light-primary",
+      "badgeValue": "2",
+      "active": false,
+      "children": [
+        {
+          "path": "/",
+          "title": "Default",
+          "type": "link",
+          "active":false
+        }
+        
+      ]
+    },
+    {
+      "title": "Order",
+      "icon": "stroke-layout",
+      "iconf":"fill-layout",
+      "type": "sub",
+      "active": false,
+      "children": [
+        {
+          "path": "/pageLayout/boxed",
+          "title": "Boxed",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/RTL",
+          "title": "RTL",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/darklayout",
+          "title": "Dark Layout",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/hidenavscroll",
+          "title": "Hide Nav Scroll",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/footerlight",
+          "title": "Footer Light",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/footerdark",
+          "title": "Footer Dark",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/pageLayout/footerfixed",
+          "title": "Footer Fixed",
+          "type": "link",
+          "active":false
+        }
+      ]
+    },
+   
+    {
+      "title": "Report",
+      "icon": "stroke-project",
+      "iconf":"fill-project",
+      "type": "sub",
+      "badgeType": "light-secondary",
+      "badgeValue": "new",
+      "active": false,
+      "children": [
+        {
+          "path": "/project/projectlist",
+          "title": "Project list",
+          "type": "link",
+          "active": false
+        },
+        {
+          "path": "/project/createproject",
+          "title": "Create new",
+          "type": "link",
+          "active": false
+        }
+      ]
+    },
+    {
+      "title": "Products",
+      "type": "sub",
+      "icon": "stroke-ecommerce",
+      "iconf":"fill-ecommerce",
+      "active": false,
+      "children": [
+        {
+          "path": "/products/create",
+          "title": "เพิ่มสินค้าใหม่",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/products",
+          "title": "สินค้าทั้งหมด",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/product-type",
+          "title": "ประเภทสินค้า",
+          "type": "link",
+          "active":false
+        }
+      ]
+    },
+    {
+      "path": "/kunbanboard",
+      "title": "Document",
+      "icon": "stroke-board",
+      "iconf":"fill-board",
+      "type": "link",
+      "badgeType": "light-danger",
+      "badgeValue": "latest",
+      "active": false
+    },
+    {
+      "title": "User Permission",
+      "icon": "stroke-user",
+      "iconf":"fill-user",
+      "type": "sub",
+      "active": false,
+      "children": [
+        {
+          "path": "/ecommerce/product",
+          "title": "Product",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/productPage/1",
+          "title": "Product Page",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/list",
+          "title": "Product List",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/payment/details",
+          "title": "Payment Details",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/order/history",
+          "title": "Order Details",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/invoice",
+          "title": "Invoice",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/cart",
+          "title": "Cart",
+          "type": "link",
+          "active":false
+        },
+       
+        {
+          "path": "/ecommerce/wishlist",
+          "title": "Wishlist",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/checkout",
+          "title": "Checkout",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/ecommerce/pricing",
+          "title": "Pricing",
+          "type": "link",
+          "active":false
+        }
+      
+      
+      ]
+    }
+  ]
+}
