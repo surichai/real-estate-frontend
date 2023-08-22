@@ -1,6 +1,13 @@
 export default defineNuxtConfig({
+    target: 'static',
+    ssr: true,
+    nitro: {
+        prerender: {
+          crawlLinks: true,
+          failOnError: false, 
+        },
+    },
     css: ['@/assets/scss/app.scss'],
-    ssr: false,
     app: {
         head: {
             link: [
@@ -41,7 +48,7 @@ export default defineNuxtConfig({
     // debug: false,
     i18n: {
         strategy: 'prefix_except_default',
-        defaultLocale: 'fr',
+        defaultLocale: 'en',
         locales: [
             {
                 icon: 'flag-icon-us',

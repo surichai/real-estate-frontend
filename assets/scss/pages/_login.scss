@@ -1,6 +1,14 @@
 /**=====================
     25. Authentication CSS Start
 ==========================**/
+.logo-and-text{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+}
 
 .login-card {
   min-height: 100vh;
@@ -8,12 +16,12 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  background: url('../images/login/login_bg.jpg');
+  // background: url('../images/login/login_bg.jpg');
   background-position: center;
   padding: 30px 12px;
 
   .logo {
-    display: block;
+    // display: block;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -39,9 +47,9 @@
     width: 450px;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 37px rgba(8, 21, 66, 0.05);
+    // box-shadow: 0 0 37px rgba(8, 21, 66, 0.05);
     margin: 0 auto;
-    background-color: $white;
+    // background-color: $white;
 
     .theme-form {
       .social{

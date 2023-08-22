@@ -15,6 +15,7 @@ import { useProductStore } from "~/store/product";
 export default {
     created() {},
     mounted() {
+    console.log('checklogin')
         // window.addEventListener("beforeunload", (event) => {
         //     localStorage.setItem(
         //         "product",

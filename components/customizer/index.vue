@@ -14,7 +14,7 @@
       <div class="tab-content">
         <CustomizerConfiguration />
         <div class="customizer-body custom-scrollbar">
-          <Customlayout />
+          <!-- <Customlayout /> -->
           <CustomSetting />
         </div>
       </div>
@@ -30,7 +30,7 @@
   import CustomizerTool from './customizertool';
   import CustomizerSetting from './customizersetting';
   import CustomizerConfiguration from './customizerconfiguration';
-  import Customlayout from './customlayout';
+ // import Customlayout from './customlayout';
   import CustomSetting from './customsetting';
 import { useMenuStore } from '~~/store/menu';
   
@@ -45,7 +45,7 @@ import { useMenuStore } from '~~/store/menu';
       CustomizerTool,
       CustomizerSetting,
       CustomizerConfiguration,
-      Customlayout,
+      // Customlayout,
       CustomSetting
     },
     computed: {
