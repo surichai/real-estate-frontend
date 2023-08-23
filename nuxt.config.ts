@@ -1,12 +1,13 @@
 export default defineNuxtConfig({
-    target: 'static',
+    // target: 'static',
+    // components:true,
     ssr: true,
-    nitro: {
-        prerender: {
-          crawlLinks: true,
-          failOnError: false, 
-        },
-    },
+    // nitro: {
+    //     prerender: {
+    //       crawlLinks: true,
+    //       failOnError: false, 
+    //     },
+    // },
     css: ['@/assets/scss/app.scss'],
     app: {
         head: {

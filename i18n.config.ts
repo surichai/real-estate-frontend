@@ -5,7 +5,7 @@ import  pt  from "./locales/pt.json";
 
 export default defineI18nConfig(nuxt => ({
     legacy: false,
-    locale: "fr",
+    locale: "en",
     messages: {
         en: en.data,
         fr: fr.data,
