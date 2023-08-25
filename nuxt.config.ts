@@ -2,6 +2,7 @@ export default defineNuxtConfig({
     // target: 'static',
     // components:true,
     ssr: true,
+    // debug: true,
     // nitro: {
     //     prerender: {
     //       crawlLinks: true,
@@ -45,8 +46,8 @@ export default defineNuxtConfig({
                 autoImports: ['defineStore', 'acceptHMRUpdate'],
             },
         ],
+        '@vee-validate/nuxt',
     ],
-    // debug: false,
     i18n: {
         strategy: 'prefix_except_default',
         defaultLocale: 'en',
