@@ -11,12 +11,15 @@
     </div>
   </div>
   <div class="my-2 py-2">
-  <div class="grid grid-md-3">
-    <div class="col-md-4 mb-2" v-for="(image,index) in fileUploadList" :key="index">
+  <div class="grid-box">
+    <div class=" mb-2" v-for="(image,index) in fileUploadList" :key="index">
       <div class="box-image ">
       <img v-if="imageSource" :src="viewImage(image)" 
-      class="img-fluid rounded" style="max-height:90px"
-   >
+      class="img-fluid rounded" style="object-fit: contain;max-height: 90px;"
+   />
+   <div class="box-footer">
+    <i class="fa fa-trash" @click="removeImage(index)"></i>
+   </div>
     </div>
     </div>
   </div>
@@ -45,21 +48,40 @@ export default {
     },
     viewImage(file) {
       return URL.createObjectURL(file);
+    },
+    removeImage(index){
+      const findIndex = this.fileUploadList.indexOf(index);
+      console.log(findIndex)
+        this.fileUploadList.splice(findIndex, 1);
     }
   }
 };
 </script>
 <style lang="css">
+.grid-box{
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.box-footer{
+  margin-top:5px;
+  padding: 2px 6px;
+  border-top: 1px solid rgb(164, 161, 161);
+}
+.box-footer >i{
+  cursor: pointer;
+}
 .box-image{
   transition: transform 0ms linear 0s;
   position: relative;
   background-color: rgb(255, 255, 255);
-  overflow:hidden;
   border:0.5px solid #c0bcbc;
-  display: flex;
   justify-content: center;
   padding:4px;
   border-radius:6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .dropzone-box {
   position: relative;

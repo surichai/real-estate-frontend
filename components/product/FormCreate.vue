@@ -20,7 +20,7 @@
                   placeholder="กรอกข้อมูลชื่อ"
                   v-model="name"
                 />
-                <div class="text-danger" v-if="nameError" >
+                <div class="text-danger" v-if="nameError">
                   {{ nameError }}
                 </div>
               </div>
@@ -45,12 +45,13 @@
                 <input
                   type="text"
                   class="form-control"
-                  :class="province ? (provinceError ? 'is-invalid' : 'is-valid') : ''"
+                  :class="
+                    province ? (provinceError ? 'is-invalid' : 'is-valid') : ''
+                  "
                   placeholder="เลือกจังหวัด"
                   v-model="province"
-                
                 />
-                <div class="text-danger" >
+                <div class="text-danger">
                   {{ provinceError }}
                 </div>
               </div>
@@ -59,7 +60,9 @@
                 <input
                   type="text"
                   class="form-control"
-                  :class="district ? (districtError ? 'is-invalid' : 'is-valid') : ''"
+                  :class="
+                    district ? (districtError ? 'is-invalid' : 'is-valid') : ''
+                  "
                   placeholder="เลือกอำเภอ/เขต"
                   v-model="district"
                 />
@@ -72,19 +75,156 @@
                 <input
                   type="text"
                   class="form-control"
-                  :class="subdistrict ? (subdistrictError ? 'is-invalid' : 'is-valid') : ''"
+                  :class="
+                    subdistrict
+                      ? subdistrictError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
                   placeholder="ตำบล/แขวง"
                   v-model="subdistrict"
                 />
-                <div class="text-danger" >
+                <div class="text-danger">
                   {{ subdistrictError }}
                 </div>
               </div>
             </div>
+
+            <div class="row mt-2">
+              <div class="col-md-12">
+                <label class="form-label text-secondary">ที่อยู่ </label>
+                <textarea
+                  class="form-control"
+                  :class="address ? (addressError ? 'is-invalid' : 'is-valid') : ''"
+                  placeholder="กรอกที่อยู่"
+                  v-model="address"
+                  rows="5"
+                >
+                </textarea>
+                <div class="text-danger" v-if="addressError">
+                  {{ addressError }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label text-dark">ราคา (บาท)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="
+                    price
+                      ? priceError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
+                  v-model="price"
+                />
+                <div class="text-danger">
+                  {{ priceError }}
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label text-dark">ขนาดห้อง (ตร.ม)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="
+                    room_size
+                      ? roomSizeError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
+                  v-model="room_size"
+                />
+                <div class="text-danger">
+                  {{ roomSizeError }}
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label text-dark">จำนวนห้องนอน </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="
+                    bedrooms
+                      ? bedroomsError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
+                  v-model="bedrooms"
+                />
+                <div class="text-danger">
+                  {{ bedroomsError }}
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label text-dark">จำนวนห้องน้ำ </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="
+                    toilet
+                      ? toiletError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
+                  v-model="toilet"
+                />
+                <div class="text-danger">
+                  {{ toiletError }}
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label text-dark">ประเภทสินค้า </label>
+                <select class="form-select" aria-label="Default select example">
+  <option selected>เลือกประเภทสินค้า</option>
+  <option value="1">บ้านเดียว</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+                <div class="text-danger">
+                  {{ toiletError }}
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-2">
+                <label class="form-label fw-bold">จำนวนห้องนอน </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  :class="
+                    bedrooms
+                      ? bedroomsError
+                        ? 'is-invalid'
+                        : 'is-valid'
+                      : ''
+                  "
+                  v-model="bedrooms"
+                />
+                <div class="text-danger">
+                  {{ bedroomsError }}
+                </div>
+              </div>
+            </div>
             <div class="mt-3">
-              <button class="btn btn-primary btn-lg" 
-           :disabled="isSubmitting"
-              type="submit">
+              <button
+                class="btn btn-primary btn-lg"
+                :disabled="isSubmitting"
+                type="submit"
+              >
                 บันทึกข้อมูล
               </button>
             </div>
@@ -95,8 +235,7 @@
   </div>
 </template>
 
-
-<script >
+<script>
 import { Form, Field, ErrorMessage, useField, useForm } from "vee-validate";
 import * as yup from "yup";
 
@@ -106,10 +245,12 @@ export default {
       name: yup.string().required("กรุณากรอกข้อมูลชื่อ"),
       password: yup.string().required().min(8),
       zip: yup.string().required().min(5, "กรอกข้อมูลให้ถูกต้อง"),
-      province:yup.string().required('กรุณาเลือกจังหวัด'),
-      district:yup.string().required('กรุณาเลือกอำเภอ'),
-      subdistrict:yup.string().required('กรุณาเลือกตำบล'),
-
+      province: yup.string().required("กรุณาเลือกจังหวัด"),
+      district: yup.string().required("กรุณาเลือกอำเภอ"),
+      subdistrict: yup.string().required("กรุณาเลือกตำบล"),
+      address: yup.string().required("กรุณากรอกข้อมูลที่อยู่"),
+      price: yup.string().required("กรุณากรอกราคา"),
+      room_size: yup.string().required("กรุณากรอกข้อมูลขนาด"),
     });
     const { handleSubmit, isSubmitting, setFieldValue } = useForm({
       initialValues: {
@@ -139,14 +280,14 @@ export default {
     const { value: zip, errorMessage: zipError } = useField("zip");
     const { value: province, errorMessage: provinceError } =
       useField("province");
-      
+
     const { value: district, errorMessage: districtError } =
       useField("district");
     const { value: subdistrict, errorMessage: subdistrictError } =
       useField("subdistrict");
 
-
     const { value: address, errorMessage: addressError } = useField("address");
+
     const { value: price, errorMessage: priceError } = useField("price");
     const { value: room_size, errorMessage: roomSizeError } =
       useField("room_size");
@@ -175,6 +316,16 @@ export default {
       districtError,
       subdistrict,
       subdistrictError,
+      address,
+      addressError,
+      price,
+      priceError,
+      room_size,
+      roomSizeError,
+      bedrooms,
+      bedroomsError,
+      toilet,
+      toiletError,
 
       onSubmit,
       isSubmitting,
