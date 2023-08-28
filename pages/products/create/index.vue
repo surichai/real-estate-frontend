@@ -1,6 +1,5 @@
 <template>
-     <Breadcrumbs title="สร้างสินค้าใหม่" main="สินค้าทั้งหมด" />
-          <!-- <ProductFormCreate/> -->
-          <ProductFormTest/>
-
+  <Breadcrumbs title="สร้างสินค้าใหม่" main="สินค้าทั้งหมด" />
+  <ProductFormCreate />
+  <!-- <ProductFormTest /> -->
 </template>

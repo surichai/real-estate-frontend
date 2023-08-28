@@ -1,20 +1,66 @@
 <template>
-        <div class="dropzone-box">
-            <div class="dropzone-content">
-              <i class="fa fa-plus-circle h3" style="color: #e2e2e2"></i>
-              <div class="" v-if="!show_text">อัพโหลดภาพสินค้า</div>
-              <span>เพิ่มได้อีก 16 รูป</span>
-              <input id="file-input" type="file" accept=".jpeg,.jpg" />
-            </div>
-          </div>
+   <div>
+  <div class="dropzone-box">
+    <div class="dropzone-content">
+      <i class="fa fa-plus-circle h3" style="color: #e2e2e2"></i>
+      <div class="" v-if="!showText">อัพโหลดภาพสินค้า</div>
+      <span>เพิ่มได้อีก {{ fileUploadList.length? 6-fileUploadList.length:5 }} รูป</span>
+      <input id="file-input" type="file"
+      @change="onUploadFile"
+      accept=".jpeg,.jpg" />
+    </div>
+  </div>
+  <div class="my-2 py-2">
+  <div class="grid grid-md-3">
+    <div class="col-md-4 mb-2" v-for="(image,index) in fileUploadList" :key="index">
+      <div class="box-image ">
+      <img v-if="imageSource" :src="viewImage(image)" 
+      class="img-fluid rounded" style="max-height:90px"
+   >
+    </div>
+    </div>
+  </div>
+</div>
+ </div>
 </template>
 <script >
 export default {
-    props: ['show_text'],
-}
+  props: [
+    'showText',
+    'fileList'
+],
+  data() {
+    return {
+      fileUploadList: this.fileList ? this.fileList : [],
+      imageSource:'',
+    };
+  },
+  methods: {
+    onUploadFile(event){
+      const file = event.target.files[0];
+      if (file) {
+        this.fileUploadList.push(file);
+        this.imageSource = URL.createObjectURL(file);
+      }
+    },
+    viewImage(file) {
+      return URL.createObjectURL(file);
+    }
+  }
+};
 </script>
 <style lang="css">
-
+.box-image{
+  transition: transform 0ms linear 0s;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  overflow:hidden;
+  border:0.5px solid #c0bcbc;
+  display: flex;
+  justify-content: center;
+  padding:4px;
+  border-radius:6px;
+}
 .dropzone-box {
   position: relative;
   box-sizing: border-box;
@@ -31,7 +77,6 @@ export default {
   height: 100%;
   width: 100%;
 }
-
 
 .dropzone-content {
   display: flex;
